@@ -19,7 +19,7 @@ const create_item = () => {
   let item = document.createElement("DIV");
   item.classList.add('item');
   item.id = ("item-"+order);
-  item.setAttribute("draggable", "true");
+  item.setAttribute(draggable, true);
 };
 
 document.querySelectorAll('.drop').forEach(element => {
