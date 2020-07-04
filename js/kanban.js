@@ -20,9 +20,8 @@ const create_item = () => {
   item.classList.add('item');
   item.id = "item-" + order;
   item.setAttribute('draggable', true);
-  item.addEventListener('dragstart', function(event){
-    return setData();
-  } )
+  item.addEventListener('dragstart', event => event.DataTransfer.setData('text', event.target.id));
+  item.addEventListener('dragend', event => event.DataTransfer.clearData());
 };
 
 document.querySelectorAll('.drop').forEach(element => {
