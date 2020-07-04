@@ -18,8 +18,11 @@ add_btn.addEventListener('click', () => {
 const create_item = () => {
   let item = document.createElement("DIV");
   item.classList.add('item');
-  item.id = ("item-"+order);
-  item.setAttribute(draggable, true);
+  item.id = "item-" + order;
+  item.setAttribute('draggable', true);
+  item.addEventListener('dragstart', function(event){
+    return setData();
+  } )
 };
 
 document.querySelectorAll('.drop').forEach(element => {
